@@ -1,0 +1,36 @@
+\documentclass{article}
+\usepackage[margin=0.4cm,top=0.4cm,bottom=0.4cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref, amsmath, amssymb}
+\usepackage{amsmath,amssymb,amsthm,tikz,tkz-graph,color,chngpage,soul,hyperref,csquotes,graphicx,floatrow}
+\newtheorem{theorem}{Theorem}
+
+\title{289 Final Project Proposal}
+\author{Yagna Patel \\ yagnapatel@berkeley.edu}
+\date{March 19th 2017}
+
+\begin{document}
+\maketitle
+
+\section{Introduction}
+Univariate polynomials are polynomials of one indeterminate (variable). A degree-$n$ univariate polynomial is of the form $$P_n(z) = a_nz^n + a_{n-1}z^{n-1} + \ldots + a_1z + a_0\quad (a_n\in\mathbb{C})$$ Now, the fundamental theorem of algebra states that \begin{theorem}Every polynomial function of degree-$n$, such that $n>0$, has exactly $n$ complex roots.\end{theorem} \noindent These roots can be integers, non-integer reals, or complex. For example, consider the polynomial $$f(z) = z^4-\frac{3}{2}z^3+\frac{3}{2}z^2-\frac{3}{2}z+\frac{1}{2}$$ Notice that \begin{align*}f(z) &= z^4-\frac{3}{2}z^3+\frac{3}{2}z^2-\frac{3}{2}z+\frac{1}{2} \\&= (z-1)(z-0.5)(z-i)(z+i)\end{align*} Therefore $f(z)$ has four roots: two complex roots, one integer root, and one non-integer real root.
+
+\section{Problem}
+There exist multiple methods of finding the number of roots. For example, one can use Rational Root Theorem to find the number of rational roots of a polynomial, Descartes' rule of signs to find the number of real roots of a polynomial, etc. In my project, I will train a Feedforward Neural Network (FNN) to find the number of integer, non-integer real, and complex roots of a given polynomial. To my knowledge, there exists a method of using a FNN to find the number of real roots of a polynomial \cite{real_roots}. However, there doesn't seem to be any research on finding the three types I have listed.
+
+\section{Generating Dataset}
+To train my FNN, we will need a dataset of polynomials and its classified roots. However, we don't have to go looking for a dataset. Instead, we can generate our own! A general overview of the method is as follows
+\begin{enumerate}
+\item \begin{verbatim}Generate a random number n, the degree of our polynomial\end{verbatim}
+\item \begin{verbatim}Generate n complex numbers, the roots of our polynomial.\end{verbatim}
+\item \begin{verbatim}Compute the polynomial using the n roots.\end{verbatim}
+\item \begin{verbatim}Classify the roots into the three categories: integer, non-integer real, and complex roots.\end{verbatim}
+\item \begin{verbatim}Repeat.\end{verbatim}
+\end{enumerate}
+
+\begin{thebibliography}{999}
+\bibitem{real_roots}
+\href{https://www.sciencedirect.com/science/article/pii/S0898122105005195}{B. Mourrain, N.G. Pavlidis, D.K. Tasoulis, M.N. Vrahatis, Determining the number of real roots of polynomials through neural networks, \textit{Computers and
+Mathematics with Applications 51} 527-536 (2006).}
+\end{thebibliography}
+\end{document}
