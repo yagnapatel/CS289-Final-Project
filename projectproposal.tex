@@ -13,10 +13,17 @@
 \maketitle
 
 \section{Introduction}
-Univariate polynomials are polynomials of one indeterminate (variable). A degree-$n$ univariate polynomial is of the form $$P_n(z) = a_nz^n + a_{n-1}z^{n-1} + \ldots + a_1z + a_0\quad (a_n\in\mathbb{C})$$ Now, the fundamental theorem of algebra states that \begin{theorem}Every polynomial function of degree-$n$, such that $n>0$, has exactly $n$ complex roots.\end{theorem} \noindent These roots can be integers, non-integer reals, or complex. For example, consider the polynomial $$f(z) = z^4-\frac{3}{2}z^3+\frac{3}{2}z^2-\frac{3}{2}z+\frac{1}{2}$$ Notice that \begin{align*}f(z) &= z^4-\frac{3}{2}z^3+\frac{3}{2}z^2-\frac{3}{2}z+\frac{1}{2} \\&= (z-1)(z-0.5)(z-i)(z+i)\end{align*} Therefore $f(z)$ has four roots: two complex roots, one integer root, and one non-integer real root.
+Univariate polynomials are polynomials of one indeterminate (variable). A degree-$n$ univariate polynomial is of the form $$P_n(z) = a_nz^n + a_{n-1}z^{n-1} + \ldots + a_1z + a_0\quad (a_n\in\mathbb{C})$$ Now, the fundamental theorem of algebra states that \begin{theorem}Every polynomial function of degree-$n$, such that $n>0$, has exactly $n$ complex roots.\end{theorem} \noindent These roots can be integers ($\mathbb{Z}$), non-integer reals ($\mathbb{R}\setminus\mathbb{Z}$), or complex ($\mathbb{C}$). For example, consider the polynomial $$f(z) = z^4-\frac{3}{2}z^3+\frac{3}{2}z^2-\frac{3}{2}z+\frac{1}{2}$$ Notice that \begin{align*}f(z) &= z^4-\frac{3}{2}z^3+\frac{3}{2}z^2-\frac{3}{2}z+\frac{1}{2} \\&= (z-1)(z-0.5)(z-i)(z+i)\end{align*} Therefore $f(z)$ has four roots: two complex roots, one integer root, and one non-integer real root.
 
 \section{Problem}
-There exist multiple methods of finding the number of roots. For example, one can use Rational Root Theorem to find the number of rational roots of a polynomial, Descartes' rule of signs to find the number of real roots of a polynomial, etc. In my project, I will train a Feedforward Neural Network (FNN) to find the number of integer, non-integer real, and complex roots of a given polynomial. To my knowledge, there exists a method of using a FNN to find the number of real roots of a polynomial \cite{real_roots}. However, there doesn't seem to be any research on finding the three types I have listed.
+There exist multiple methods of finding the number of roots. For example, one can use Rational Root Theorem to find the number of rational roots of a polynomial, Descartes' rule of signs to find the number of real roots of a polynomial, etc. In my project, I will train a Feedforward Neural Network (FNN) to classify a polynomial's roots into three types: integers, non-integer reals, and complex roots. 
+\vspace{4pt}
+
+\noindent Although, to most people, this problem that I pose doesn't seem too interesting, I am quite interested in seeing if this can provide a new and different way of viewing polynomials. 
+
+\vspace{4pt}
+
+\noindent To my knowledge, there has been substantial research done in finding polynomial roots using neural networks, however, classification of polynomial roots, or finding the number of roots remains fairly untouched. There exists a method of using a FNN to find the number of real roots of a polynomial \cite{real_roots}. However, it seems that there are many holes in this paper that I will attempt to fill in with my paper. 
 
 \section{Generating Dataset}
 To train my FNN, we will need a dataset of polynomials and its classified roots. However, we don't have to go looking for a dataset. Instead, we can generate our own! A general overview of the method is as follows
